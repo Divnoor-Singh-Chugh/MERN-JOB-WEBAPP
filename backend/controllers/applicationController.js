@@ -5,6 +5,7 @@ const cloudinary = require("cloudinary");
 const Job = require("../models/Job");
 
 const employerGetAllApplications = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role, _id } = req.user;
   if (role === "Job Seeker") {
     return next(
@@ -19,6 +20,7 @@ const employerGetAllApplications = catchAsyncError(async (req, res, next) => {
 });
 
 const jobseekerGetAllApplications = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role, _id } = req.user;
   if (role === "Employer") {
     return next(
@@ -33,6 +35,7 @@ const jobseekerGetAllApplications = catchAsyncError(async (req, res, next) => {
 });
 
 const jobSeekerDeleteApplication = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
   if (role === "Employer") {
     return next(
@@ -55,6 +58,7 @@ const jobSeekerDeleteApplication = catchAsyncError(async (req, res, next) => {
 });
 
 const postApplication = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
   if (role === "Employer") {
     return next(

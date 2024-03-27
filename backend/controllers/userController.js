@@ -4,6 +4,7 @@ const User = require("../models/User");
 const { sendToken } = require("../utils/jwtToken");
 
 const register = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { name, email, phone, role, password } = req.body;
   if (!name || !email || !phone || !role || !password) {
     return next(new errorHandler("Please fill full registration form!"));
@@ -24,6 +25,7 @@ const register = catchAsyncError(async (req, res, next) => {
 });
 
 const login = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { email, role, password } = req.body;
   if (!email || !role || !password) {
     return next(
@@ -45,6 +47,7 @@ const login = catchAsyncError(async (req, res, next) => {
 });
 
 const logout = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   res
     .status(201)
     .cookie("token", "", {
@@ -56,6 +59,7 @@ const logout = catchAsyncError(async (req, res, next) => {
 });
 
 const getUser = catchAsyncError((req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const user = req.user;
   res.json({ success: true, user });
 });

@@ -3,11 +3,13 @@ const Job = require("../models/Job");
 const { errorHandler } = require("../middlewares/error");
 
 const getAllJobs = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const jobs = await Job.find({ expired: false });
   res.json({ success: true, jobs });
 });
 
 const postJob = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
 
   if (role === "Job Seeker") {
@@ -66,6 +68,7 @@ const postJob = catchAsyncError(async (req, res, next) => {
 });
 
 const getmyJobs = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
   if (role === "Job Seeker") {
     return next(
@@ -81,6 +84,7 @@ const getmyJobs = catchAsyncError(async (req, res, next) => {
 });
 
 const updateJob = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
   if (role === "Job Seeker") {
     return next(
@@ -106,6 +110,7 @@ const updateJob = catchAsyncError(async (req, res, next) => {
 });
 
 const deleteJob = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { role } = req.user;
   if (role === "Job Seeker") {
     return next(
@@ -129,6 +134,7 @@ const deleteJob = catchAsyncError(async (req, res, next) => {
 });
 
 const getSinglejob = catchAsyncError(async (req, res, next) => {
+  res.set('Access-Control-Allow-Credentials', 'true');
   const { id } = req.params;
   try {
     const job = await Job.findById(id);
