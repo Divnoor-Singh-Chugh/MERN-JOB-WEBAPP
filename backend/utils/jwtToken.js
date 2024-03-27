@@ -9,7 +9,7 @@ const sendToken=(user,statusCode,res,message)=>{
         secure: true,
         SameSite:'None'
     }
-    res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Secure; SameSite=None; Expires=${options.expires.toUTCString()}`);
+    res.setHeader('Set-Cookie', `token=${token};  Secure; SameSite=None; Expires=${options.expires.toUTCString()}`);
     res.status(statusCode).cookie("token",token,options).json({
         success:true,user,message,token
     })
