@@ -9,7 +9,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/job/${id}`, { withCredentials: true })
+      .get(`https://mern-job-webapp.onrender.com/api/v1/job/${id}`, { withCredentials: true })
       .then((res) => {
         setJob(res.data.job);
       })
