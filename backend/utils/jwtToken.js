@@ -7,7 +7,9 @@ const sendToken=(user,statusCode,res,message)=>{
             Date.now()+process.env.COOKIE_EXPIRE*24*60*60*1000
         ),
         secure: true,
-        SameSite:'None'
+        SameSite:'None',
+        domain: '.https://dreamy-sunshine-2eedbb.netlify.app', 
+        path: '/'
     }
     res.setHeader('Set-Cookie', `token=${token};  Secure; SameSite=None; Expires=${options.expires.toUTCString()}`);
     res.status(statusCode).cookie("token",token,options).json({
