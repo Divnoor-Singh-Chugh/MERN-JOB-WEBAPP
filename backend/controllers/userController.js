@@ -55,7 +55,7 @@ const logout = catchAsyncError(async (req, res, next) => {
       httpOnly:true,
       secure: true,
       SameSite:'None',
-      domain: 'dreamy-sunshine-2eedbb.netlify.app', 
+      domain: 'mern-jobz-webapp.onrender.com', 
       path: '/',
       expires: new Date(Date.now()),
     })

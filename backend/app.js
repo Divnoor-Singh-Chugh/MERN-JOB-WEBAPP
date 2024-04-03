@@ -25,7 +25,7 @@ app.use(fileUpload({
 }));
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://dreamy-sunshine-2eedbb.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://mern-jobz-webapp.onrender.com');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
   });

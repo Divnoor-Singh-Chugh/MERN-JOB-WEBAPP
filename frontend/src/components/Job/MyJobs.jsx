@@ -24,7 +24,7 @@ const MyJobs = () => {
               Accept: 'application/json',
               'Access-Control-Allow-Credentials':'true',
               'Access-Control-Allow-Origin':
-                'https://dreamy-sunshine-2eedbb.netlify.app',
+                'https://mern-jobz-webapp.onrender.com',
             }
         }
         );
@@ -60,7 +60,7 @@ const MyJobs = () => {
           Accept: 'application/json',
           'Access-Control-Allow-Credentials':'true',
           'Access-Control-Allow-Origin':
-            'https://dreamy-sunshine-2eedbb.netlify.app',
+            'https://mern-jobz-webapp.onrender.com',
         }
     })
       .then((res) => {
@@ -82,7 +82,7 @@ const MyJobs = () => {
           Accept: 'application/json',
           'Access-Control-Allow-Credentials':'true',
           'Access-Control-Allow-Origin':
-            'https://dreamy-sunshine-2eedbb.netlify.app',
+            'https://mern-jobz-webapp.onrender.com',
         }
     })
       .then((res) => {
