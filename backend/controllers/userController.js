@@ -48,11 +48,14 @@ const login = catchAsyncError(async (req, res, next) => {
 
 const logout = catchAsyncError(async (req, res, next) => {
   res.set('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Set-Cookie', `token="";  Secure; SameSite=None; Expires=${new Date(Date.now()).toUTCString()}`);
   res
     .status(201)
     .cookie("token", "", {
       secure: true,
       SameSite:'None',
+      domain: 'https://dreamy-sunshine-2eedbb.netlify.app', 
+      path: '/',
       expires: new Date(Date.now()),
     })
     .json({ success: true, message: "User logged out successfully!" });
