@@ -15,12 +15,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Access-Control-Allow-Credentials','Authorization','Access-Control-Allow-Origin','Set-Cookie'],
     credentials:true
 }))
-
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://dreamy-sunshine-2eedbb.netlify.app');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    next();
-  });
   
 app.use(cookieParser());
 app.use(express.json());
@@ -29,6 +23,12 @@ app.use(fileUpload({
     useTempFiles:true,
     tempFileDir:'/tmp/'
 }));
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://dreamy-sunshine-2eedbb.netlify.app');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+  });
 
 app.use('/api/v1/user',userRouter);
 app.use('/api/v1/job',jobRouter);
