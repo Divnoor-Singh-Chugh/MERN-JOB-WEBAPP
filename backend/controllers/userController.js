@@ -52,6 +52,7 @@ const logout = catchAsyncError(async (req, res, next) => {
   res
     .status(201)
     .cookie("token", "", {
+      httpOnly:true,
       secure: true,
       SameSite:'None',
       domain: 'https://dreamy-sunshine-2eedbb.netlify.app', 
