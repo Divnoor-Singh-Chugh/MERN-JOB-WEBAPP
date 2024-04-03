@@ -16,7 +16,16 @@ const MyJobs = () => {
       try {
         const { data } = await axios.get(
           "https://mern-job-webapp.onrender.com/api/v1/job/getmyjobs",
-          { withCredentials: true }
+          {
+            withCredentials: true,
+            crossDomain: true,
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              'Access-Control-Allow-Origin':
+                'https://dreamy-sunshine-2eedbb.netlify.app',
+            }
+        }
         );
         setMyJobs(data.myJobs);
       } catch (error) {
@@ -44,7 +53,14 @@ const MyJobs = () => {
     await axios
       .put(`https://mern-job-webapp.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
-      })
+        crossDomain: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin':
+            'https://dreamy-sunshine-2eedbb.netlify.app',
+        }
+    })
       .then((res) => {
         toast.success(res.data.message);
         setEditingMode(null);
@@ -56,9 +72,16 @@ const MyJobs = () => {
 
   const handleJobDelete = async (jobId) => {
     await axios
-      .delete(`https://mern-job-webapp.onrender.com/api/v1/job/delete/${jobId}`, {
+      .delete(`https://mern-job-webapp.onrender.com/api/v1/job/delete/${jobId}`,{
         withCredentials: true,
-      })
+        crossDomain: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin':
+            'https://dreamy-sunshine-2eedbb.netlify.app',
+        }
+    })
       .then((res) => {
         toast.success(res.data.message);
         setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));

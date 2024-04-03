@@ -17,7 +17,14 @@ const MyApplications = () => {
         axios
           .get("https://mern-job-webapp.onrender.com/api/v1/application/employer/getall", {
             withCredentials: true,
-          })
+            crossDomain: true,
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              'Access-Control-Allow-Origin':
+                'https://dreamy-sunshine-2eedbb.netlify.app',
+            }
+        })
           .then((res) => {
             setApplications(res.data.applications);
           });
@@ -25,7 +32,14 @@ const MyApplications = () => {
         axios
           .get("https://mern-job-webapp.onrender.com/api/v1/application/jobseeker/getall", {
             withCredentials: true,
-          })
+            crossDomain: true,
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              'Access-Control-Allow-Origin':
+                'https://dreamy-sunshine-2eedbb.netlify.app',
+            }
+        })
           .then((res) => {
             setApplications(res.data.applications);
           });
@@ -44,7 +58,14 @@ const MyApplications = () => {
        axios
         .delete(`https://mern-job-webapp.onrender.com/api/v1/application/delete/${id}`, {
           withCredentials: true,
-        })
+          crossDomain: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+              'https://dreamy-sunshine-2eedbb.netlify.app',
+          }
+      })
         .then((res) => {
           console.log(res);
           toast.success(res.data.message);

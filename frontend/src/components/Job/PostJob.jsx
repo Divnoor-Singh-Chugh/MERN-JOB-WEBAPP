@@ -54,10 +54,16 @@ const PostJob = () => {
               salaryTo,
               description,
             },
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
+            {
+              withCredentials: true,
+              crossDomain: true,
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                'Access-Control-Allow-Origin':
+                  'https://dreamy-sunshine-2eedbb.netlify.app',
+              }
+          }
       )
       .then((res) => toast.success(res.data.message))
       .catch((error) => toast.error(error.response.data.message));

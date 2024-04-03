@@ -9,7 +9,16 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://mern-job-webapp.onrender.com/api/v1/job/${id}`, { withCredentials: true })
+      .get(`https://mern-job-webapp.onrender.com/api/v1/job/${id}`, {
+        withCredentials: true,
+        crossDomain: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin':
+            'https://dreamy-sunshine-2eedbb.netlify.app',
+        }
+    })
       .then((res) => {
         setJob(res.data.job);
       })

@@ -14,7 +14,16 @@ const NavBar = () => {
     try {
       const response = await axios.get(
         "https://mern-job-webapp.onrender.com/api/v1/user/logout",
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          crossDomain: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+              'https://dreamy-sunshine-2eedbb.netlify.app',
+          }
+      }
       );
       toast.success(response.data.message);
       setIsAuthorized(false);

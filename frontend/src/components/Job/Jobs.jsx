@@ -10,7 +10,14 @@ const Jobs = () => {
       axios
         .get("https://mern-job-webapp.onrender.com/api/v1/job/getall", {
           withCredentials: true,
-        })
+          crossDomain: true,
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+              'https://dreamy-sunshine-2eedbb.netlify.app',
+          }
+      })
         .then((res) => {
           setJobs(res.data);
         });

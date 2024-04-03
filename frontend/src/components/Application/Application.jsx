@@ -40,10 +40,14 @@ const Application = () => {
         formData,
         {
           withCredentials: true,
+          crossDomain: true,
           headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+            'Content-Type': 'multipart/form-data',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+              'https://dreamy-sunshine-2eedbb.netlify.app',
+          }
+      }
       );
       setName("");
       setEmail("");

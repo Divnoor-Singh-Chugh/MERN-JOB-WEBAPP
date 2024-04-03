@@ -24,10 +24,14 @@ const Register = () => {
         { name, email, password, phone, role },
         {
           withCredentials: true,
+          crossDomain: true,
           headers: {
-            "Content-Type": "application/json",
-          },
-        }
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            'Access-Control-Allow-Origin':
+              'https://dreamy-sunshine-2eedbb.netlify.app',
+          }
+      }
       );
       toast.success(data.message);
       setEmail("");
