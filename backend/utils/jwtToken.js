@@ -9,7 +9,7 @@ const sendToken=(user,statusCode,res,message)=>{
         httpOnly:true,
         secure: true,
         SameSite:'None',
-        domain: 'https://dreamy-sunshine-2eedbb.netlify.app', 
+        domain: 'dreamy-sunshine-2eedbb.netlify.app', 
         path: '/'
     }
     res.setHeader('Set-Cookie', `token=${token};  Secure; SameSite=None; Expires=${options.expires.toUTCString()}`);
