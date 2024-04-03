@@ -30,6 +30,7 @@ useEffect(()=>{
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          'Access-Control-Allow-Credentials':'true',
           'Access-Control-Allow-Origin':
             'https://dreamy-sunshine-2eedbb.netlify.app',
         }

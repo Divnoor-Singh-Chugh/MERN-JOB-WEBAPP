@@ -44,6 +44,7 @@ const Application = () => {
           headers: {
             'Content-Type': 'multipart/form-data',
             Accept: 'application/json',
+            'Access-Control-Allow-Credentials':'true',
             'Access-Control-Allow-Origin':
               'https://dreamy-sunshine-2eedbb.netlify.app',
           }
