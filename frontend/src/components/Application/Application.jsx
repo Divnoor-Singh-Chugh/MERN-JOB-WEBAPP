@@ -43,7 +43,7 @@ const Application = () => {
           crossDomain: true,
           headers: {
             'Content-Type': 'multipart/form-data',
-            Accept: 'application/json',
+            Accept: 'multipart/form-data',
             'Access-Control-Allow-Credentials':'true',
             'Access-Control-Allow-Origin':
               'https://mern-jobz-webapp.onrender.com',
