@@ -57,6 +57,8 @@ const PostJob = () => {
             {
               withCredentials: true,
               crossDomain: true,
+              mode: 'cors',
+        credentials: 'cross-origin',
               headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',

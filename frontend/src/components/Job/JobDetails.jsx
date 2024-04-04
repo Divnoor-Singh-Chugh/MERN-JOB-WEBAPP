@@ -12,6 +12,8 @@ const JobDetails = () => {
       .get(`https://mern-job-webapp.onrender.com/api/v1/job/${id}`, {
         withCredentials: true,
         crossDomain: true,
+        mode: 'cors',
+        credentials: 'cross-origin',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',

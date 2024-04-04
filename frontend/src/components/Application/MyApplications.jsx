@@ -18,6 +18,8 @@ const MyApplications = () => {
           .get("https://mern-job-webapp.onrender.com/api/v1/application/employer/getall", {
             withCredentials: true,
             crossDomain: true,
+            mode: 'cors',
+        credentials: 'cross-origin',
             headers: {
               'Content-Type': 'application/json',
               Accept: 'application/json',
@@ -34,6 +36,8 @@ const MyApplications = () => {
           .get("https://mern-job-webapp.onrender.com/api/v1/application/jobseeker/getall", {
             withCredentials: true,
             crossDomain: true,
+            mode: 'cors',
+        credentials: 'cross-origin',
             headers: {
               'Content-Type': 'application/json',
               Accept: 'application/json',
@@ -61,6 +65,8 @@ const MyApplications = () => {
         .delete(`https://mern-job-webapp.onrender.com/api/v1/application/delete/${id}`, {
           withCredentials: true,
           crossDomain: true,
+          mode: 'cors',
+        credentials: 'cross-origin',
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',

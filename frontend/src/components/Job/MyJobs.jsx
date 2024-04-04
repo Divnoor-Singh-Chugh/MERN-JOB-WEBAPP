@@ -19,6 +19,8 @@ const MyJobs = () => {
           {
             withCredentials: true,
             crossDomain: true,
+            mode: 'cors',
+        credentials: 'cross-origin',
             headers: {
               'Content-Type': 'application/json',
               Accept: 'application/json',
@@ -55,6 +57,8 @@ const MyJobs = () => {
       .put(`https://mern-job-webapp.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
         crossDomain: true,
+        mode: 'cors',
+        credentials: 'cross-origin',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -77,6 +81,8 @@ const MyJobs = () => {
       .delete(`https://mern-job-webapp.onrender.com/api/v1/job/delete/${jobId}`,{
         withCredentials: true,
         crossDomain: true,
+        mode: 'cors',
+        credentials: 'cross-origin',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',

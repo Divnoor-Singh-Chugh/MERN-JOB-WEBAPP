@@ -41,6 +41,8 @@ const Application = () => {
         {
           withCredentials: true,
           crossDomain: true,
+          mode: 'cors',
+        credentials: 'cross-origin',
           headers: {
             'Content-Type': 'multipart/form-data',
             Accept: 'multipart/form-data',
